@@ -828,7 +828,7 @@ exports.test_data = {
         ]
     }, {
         name: "Php formatting",
-        description: "Php (<?php ... ?>) treated as comments.",
+        description: "Php (<?php ... ?> and <?= ... ?>) treated as comments.",
         options: [],
         tests: [{
             fragment: true,
@@ -857,6 +857,21 @@ exports.test_data = {
                 '<body></body>',
                 '',
                 '</html>'
+            ]
+        }, {
+            fragment: true,
+            unchanged: [
+                '<?= "A" ?>',
+                '<?= "B" ?>',
+                '<?= "C" ?>'
+            ]
+        }, {
+            fragment: true,
+            unchanged: [
+                '<?php',
+                'echo "A";',
+                '?>',
+                '<span>Test</span>'
             ]
         }]
     }, {

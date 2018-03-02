@@ -2723,6 +2723,15 @@ function run_html_tests(test_obj, Urlencoded, js_beautify, html_beautify, css_be
             '<body></body>\n' +
             '\n' +
             '</html>');
+        test_fragment(
+            '<?= "A" ?>\n' +
+            '<?= "B" ?>\n' +
+            '<?= "C" ?>');
+        test_fragment(
+            '<?php\n' +
+            'echo "A";\n' +
+            '?>\n' +
+            '<span>Test</span>');
 
 
         //============================================================
